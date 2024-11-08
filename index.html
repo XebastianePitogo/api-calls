@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baste's Playground</title>
+    <title>Kittygram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/image/catLogo.svg" type="image/icon type">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="scripts.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
+
 <body>
-    <h1>Hi</h1>
+    <div class="content-container">
+        <div id="catModel" class="threeD">
+            <model-viewer src="assets/catModel/Maxwell/scene.gltf" alt="Cute Maxwell Cat" preload auto-rotate
+                interaction-prompt="auto" interaction-prompt-threshold="1000" disable-zoom>
+            </model-viewer>
+        </div>
+        <h1 class="textHeader">Cat Archives ;)</h1>
+        <div id="catModel" class="threeD">
+            <model-viewer src="assets/catModel/Munckin/scene.gltf" alt="Cute Munchkin Cat" preload auto-rotate
+                interaction-prompt="auto" interaction-prompt-threshold="1000" disable-zoom>
+            </model-viewer>
+        </div>
+    </div>
+    <div class="generate">
+        <button type="button" onclick="fetchCatImage()" alt="button">
+            <span id="buttonMeow">
+                &#128568 Generate Meows! (Next Cat) &#128568
+            </span>
+        </button>
+    </div>
+    <div id="catContainer">
+        <img id="catImage" src="" alt="When click, get Cat Image" style="display: none;" />
+    </div>
 </body>
+
 </html>
